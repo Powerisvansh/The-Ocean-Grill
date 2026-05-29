@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ocean Grill | Calangute, Goa</title>
+  <meta name="description" content="A sun-drenched sanctuary in Calangute. Fresh catch, charcoal smoke & cold beer.">
+  <meta property="og:title" content="The Ocean Grill | Calangute, Goa">
+  <meta property="og:description" content="Fresh catch, charcoal smoke & cold beer. A sun-drenched sanctuary in Calangute.">
+  <meta property="og:image" content="https://ocean-grill-gems.lovable.app/assets/ambience-Dx0Sc9UL.jpg">
+  <meta property="og:type" content="restaurant.menu">
+  <meta property="og:url" content="https://theoceangrill.in/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The Ocean Grill">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0c0b09">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .hero {
+      position: relative; min-height: calc(100vh - 68px); display: flex; flex-direction: column;
+      justify-content: flex-end; overflow: hidden; background: var(--color-bg);
+    }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%) contrast(1.05); }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, transparent 40%, rgba(15,15,15,0.5) 100%);
+      z-index: 1;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.2), transparent);
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative; z-index: 2; padding: 16px 0 120px; max-width: 600px;
+    }
+    .hero-content .subtitle {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.25em;
+      color: var(--color-on-surface-variant); margin-bottom: 12px;
+    }
+    .hero-content h1 {
+      font-family: var(--font-display); font-size: 48px; line-height: 1.1;
+      color: #f5f0e8; margin-bottom: 20px;
+    }
+    @media (min-width: 768px) { .hero-content h1 { font-size: 64px; } }
+    .hero-divider { width: 64px; height: 1px; background: rgba(245,240,232,0.2); margin-bottom: 24px; }
+    .hero-content p {
+      font-size: 16px; line-height: 1.6; color: rgba(245,240,232,0.7);
+      max-width: 440px; margin-bottom: 36px;
+    }
+    .hero-cta { display: flex; flex-direction: column; gap: 12px; }
+    @media (min-width: 640px) { .hero-cta { flex-direction: row; flex-wrap: wrap; } }
+    .hero-stat { display: flex; gap: 32px; margin-bottom: 24px; }
+    .hero-stat-item { text-align: center; }
+    .hero-stat-item .num { font-family: var(--font-display); font-size: 28px; color: var(--color-primary); }
+    .hero-stat-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-on-surface-variant); margin-top: 4px; }
+    .scroll-hint {
+      position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); z-index: 2;
+      display: none; align-items: center; gap: 8px;
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.3);
+      animation: bounce 2s infinite;
+    }
+    @media (min-width: 768px) { .scroll-hint { display: flex; } }
+    @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+    .story-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+    @media (min-width: 768px) { .story-grid { grid-template-columns: 5fr 6fr; gap: 64px; } }
+    .story-left { order: 2; }
+    @media (min-width: 768px) { .story-left { order: 1; position: sticky; top: 120px; height: fit-content; } }
+    .story-right { order: 1; }
+    @media (min-width: 768px) { .story-right { order: 2; } }
+    .story-image { aspect-ratio: 4/5; overflow: hidden; background: var(--color-surface-container); }
+    .story-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(30%); transition: transform 0.7s; }
+    .story-image:hover img { transform: scale(1.05); }
+    .blockquote { border-left: 2px solid rgba(201,151,94,0.3); padding-left: 20px; font-style: italic; color: var(--color-on-surface-variant); font-size: 15px; margin: 24px 0; }
+    .section-divider { display: flex; justify-content: center; align-items: center; gap: 16px; padding: 24px 0; opacity: 0.3; }
+    .section-divider .line { height: 1px; width: 80px; background: var(--color-primary); }
+    .section-divider .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); }
+    .menu-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 640px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
+    .menu-card { background: var(--color-surface); padding: 20px; display: flex; flex-direction: column; }
+    .menu-card:nth-child(2) { margin-top: 0; }
+    @media (min-width: 768px) { .menu-card:nth-child(2) { margin-top: 48px; } }
+    .menu-card-image { aspect-ratio: 1; background: var(--color-surface-container); overflow: hidden; margin-bottom: 24px; }
+    .menu-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+    .menu-card:hover .menu-card-image img { transform: scale(1.05); }
+    .menu-card-content { padding: 0 8px 16px; flex: 1; display: flex; flex-direction: column; }
+    .menu-card-content h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 8px; }
+    .menu-card-content .price { font-family: var(--font-display); font-size: 18px; color: var(--color-secondary); margin-bottom: 8px; }
+    .menu-card-content p { font-size: 14px; color: var(--color-on-surface-variant); line-height: 1.6; flex: 1; }
+    .review-card { background: var(--color-surface); padding: 32px; border: 1px solid var(--color-border); }
+    .review-card .stars { color: var(--color-secondary); font-size: 14px; margin-bottom: 12px; }
+    .review-card blockquote { font-size: 15px; line-height: 1.7; color: var(--color-on-surface-variant); font-style: italic; margin-bottom: 16px; }
+    .review-card .author { font-size: 13px; color: var(--color-on-surface-muted); }
+    .review-card .author strong { color: var(--color-on-surface); font-weight: 500; }
+    .review-highlight { text-align: center; padding: 40px 0; }
+    .review-highlight .big-rating { font-family: var(--font-display); font-size: 56px; color: var(--color-primary); }
+    .review-highlight .stars-big { color: var(--color-secondary); font-size: 20px; margin: 8px 0; }
+    .cta-banner { background: #1a1a1a; color: white; padding: 64px 32px; text-align: center; position: relative; }
+    @media (min-width: 768px) { .cta-banner { padding: 96px 64px; } }
+    .cta-banner .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; color: rgba(201,151,94,0.7); margin-bottom: 16px; display: block; }
+    .cta-banner h2 { font-family: var(--font-display); font-size: 32px; line-height: 1.2; margin-bottom: 32px; }
+    @media (min-width: 768px) { .cta-banner h2 { font-size: 48px; } }
+    .cta-banner .cta-hint { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 24px; }
+    .insta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    @media (min-width: 640px) { .insta-grid { grid-template-columns: repeat(4, 1fr); } }
+    .insta-item { aspect-ratio: 1; overflow: hidden; position: relative; }
+    .insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .insta-item:hover img { transform: scale(1.08); }
+    .insta-item .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+    .insta-item:hover .overlay { opacity: 1; }
+    .insta-item .overlay svg { width: 24px; height: 24px; color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+    @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="header-logo">
+        The Ocean Grill
+        <span>Calangute, Goa</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="/" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Home</a>
+        <a href="menu.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Menu</a>
+        <a href="gallery.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Gallery</a>
+        <a href="our-story.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Story</a>
+        <a href="reviews.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Reviews</a>
+        <a href="contact.html" class="btn-reserve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M10 14h.01"/><path d="M14 14h.01"/><path d="M18 14h.01"/><path d="M10 18h.01"/><path d="M14 18h.01"/><path d="M18 18h.01"/></svg>Reserve</a>
+      </nav>
+      <button class="menu-toggle" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Home</a>
+    <a href="menu.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Menu</a>
+    <a href="gallery.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Gallery</a>
+    <a href="our-story.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Story</a>
+    <a href="reviews.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Reviews</a>
+    <a href="contact.html" style="background:var(--color-primary);color:var(--color-on-primary);padding:14px 40px;font-size:13px;text-transform:uppercase;letter-spacing:0.15em"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M10 14h.01"/><path d="M14 14h.01"/><path d="M18 14h.01"/><path d="M10 18h.01"/><path d="M14 18h.01"/><path d="M18 18h.01"/></svg>Reserve</a>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="https://ocean-grill-gems.lovable.app/assets/ambience-Dx0Sc9UL.jpg" alt="The Ocean Grill interior at dusk with warm Edison bulb lighting">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="subtitle">Falcon Resort &mdash; Naika Wado, Calangute</p>
+        <h1>Fresh catch,<br>charcoal smoke &amp; cold beer.</h1>
+        <div class="hero-divider"></div>
+        <p>A sun-drenched sanctuary in Calangute. We serve the soul of Goan coastal cooking with the salt of the Arabian Sea.</p>
+        <div class="hero-stat">
+          <div class="hero-stat-item">
+            <div class="num">1:00</div>
+            <div class="label">Open Until (AM)</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="num">4.7&#9733;</div>
+            <div class="label">Rating (1,185)</div>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn-primary">Reserve a Table</a>
+          <a href="menu.html" class="btn-outline">View Menu</a>
+          <a href="https://wa.me/919356013294?text=Hi%2C%20I%27d%20like%20to%20order%20online" target="_blank" class="btn-outline" style="border-color:rgba(37,211,102,0.4);color:#25D366;">Order Online</a>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        EXPLORE OUR LEGACY
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="section" id="story">
+      <div class="container story-grid">
+        <div class="story-left fade-in">
+          <span class="section-label">Our Origins</span>
+          <h2 class="section-title">Roots in Naika Wado</h2>
+          <p class="section-text" style="margin-bottom:20px;">The Ocean Grill is a Calangute neighbourhood institution. Spices ground by hand, morning's catch from the local market, and a fire that stays hot until the last guest leaves at 1 AM.</p>
+          <div class="blockquote">"Delicious Goan food, great seafood, very welcoming staff and such a relaxing atmosphere."<br><span style="font-style:normal;font-size:13px;color:var(--color-on-surface-muted);display:block;margin-top:8px;">&mdash; Akilan S. &middot; Local Guide</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:24px;font-size:14px;color:var(--color-on-surface-variant);">
+            <span>&check; Table Reservations</span>
+            <span>&check; No-Contact Delivery</span>
+            <span>&check; Dine-in &amp; Drive-through</span>
+          </div>
+          <a href="our-story.html" class="btn-outline" style="display:inline-block;margin-top:24px;color:var(--color-primary);border-color:var(--color-primary);">Learn Our Story</a>
+        </div>
+        <div class="story-right fade-in">
+          <div class="story-image">
+            <img src="https://ocean-grill-gems.lovable.app/assets/ambience-Dx0Sc9UL.jpg" alt="Warm interior of The Ocean Grill at dusk with hanging Edison bulbs">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider">
+      <div class="line"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+    </div>
+
+    <!-- Featured Menu -->
+    <section class="section" style="background:var(--color-surface-low);">
+      <div class="container">
+        <div class="fade-in" style="text-align:center;margin-bottom:48px;">
+          <h2 class="section-title">From the Grill</h2>
+          <p class="section-text" style="max-width:500px;margin:0 auto;">Selected highlights from our celebrated menu.</p>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card fade-in">
+            <div class="menu-card-image">
+              <img src="https://ocean-grill-gems.lovable.app/assets/thali-Bc8xdblF.jpg" alt="Goan Fish Thali">
+            </div>
+            <div class="menu-card-content">
+              <h3>Goan Fish Thali</h3>
+              <div class="price">&#8377;450</div>
+              <p>The local standard. Kingfish, prawn curry, kismur, sol kadhi and red rice.</p>
+            </div>
+          </div>
+          <div class="menu-card fade-in">
+            <div class="menu-card-image">
+              <img src="https://ocean-grill-gems.lovable.app/assets/prawns-dish-o_wbNJUi.jpg" alt="Butter Garlic Prawns">
+            </div>
+            <div class="menu-card-content">
+              <h3>Butter Garlic Prawns</h3>
+              <div class="price">&#8377;480</div>
+              <p>Tiger prawns tossed in garlic, butter and a hit of fresh coriander.</p>
+            </div>
+          </div>
+          <div class="menu-card fade-in">
+            <div class="menu-card-image">
+              <img src="https://ocean-grill-gems.lovable.app/assets/drink-BWLaLNTX.jpg" alt="Beachside Cooler">
+            </div>
+            <div class="menu-card-content">
+              <h3>Beachside Cooler</h3>
+              <div class="price">&#8377;220</div>
+              <p>House cold coffee shake &mdash; or swap for a coconut Pina Colada from the bar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in" style="text-align:center;margin-top:48px;">
+          <a href="menu.html" class="btn-primary" style="background:var(--color-primary);color:var(--color-on-primary);">View Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section">
+      <div class="container">
+        <div class="fade-in" style="text-align:center;margin-bottom:48px;">
+          <span class="section-label">Guest Reviews</span>
+          <h2 class="section-title">What Our Guests Say</h2>
+        </div>
+        <div class="review-highlight fade-in">
+          <div class="big-rating">4.7</div>
+          <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p style="font-size:14px;color:var(--color-on-surface-muted);">Based on 1,185 Google reviews</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card fade-in">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Delicious Goan food, good seafood options, very welcoming and friendly staff, great hospitality, and such a relaxing atmosphere!"</blockquote>
+            <div class="author"><strong>Akilan Sundaram</strong> &middot; Local Guide &middot; 283 reviews &middot; 1,119 photos</div>
+          </div>
+          <div class="review-card fade-in">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Got inspired to visit after reading Google reviews. Moderate ambience with vibrant wall paintings, comfortable seating both indoor and outdoor. The fish thali was excellent value."</blockquote>
+            <div class="author"><strong>Jayesh S Vyas</strong> &middot; Local Guide &middot; 34 reviews &middot; 523 photos</div>
+          </div>
+          <div class="review-card fade-in">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Great Place to eat with good ambience and tasty food."</blockquote>
+            <div class="author"><strong>Sara K.</strong> &middot; 8 reviews</div>
+          </div>
+        </div>
+        <div class="fade-in" style="text-align:center;margin-top:40px;">
+          <a href="reviews.html" class="btn-outline" style="display:inline-block;color:var(--color-primary);border-color:var(--color-primary);">Read All Reviews</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="section" style="background:var(--color-surface-low);">
+      <div class="container">
+        <div class="fade-in" style="text-align:center;margin-bottom:48px;">
+          <span class="section-label">Follow Us</span>
+          <h2 class="section-title">@theoceangrill.goa</h2>
+          <p class="section-text" style="max-width:400px;margin:0 auto;">Tag us in your photos &mdash; we share the best ones.</p>
+        </div>
+        <div class="insta-grid">
+          <div class="insta-item fade-in">
+            <img src="https://ocean-grill-gems.lovable.app/gallery/assets/grilled-fish-fries-CvzCPtk5.jpg" alt="Grilled fish at The Ocean Grill">
+            <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
+          </div>
+          <div class="insta-item fade-in">
+            <img src="https://ocean-grill-gems.lovable.app/gallery/assets/tandoori-platter-C8GnhncV.jpg" alt="Tandoori platter">
+            <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
+          </div>
+          <div class="insta-item fade-in">
+            <img src="https://ocean-grill-gems.lovable.app/gallery/assets/pina-colada-BMZEx5_9.jpg" alt="Pina Colada at The Ocean Grill">
+            <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
+          </div>
+          <div class="insta-item fade-in">
+            <img src="https://ocean-grill-gems.lovable.app/gallery/assets/chilli-chicken-bowl-DzVPWs51.jpg" alt="Chilli Chicken">
+            <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
+          </div>
+        </div>
+        <div class="fade-in" style="text-align:center;margin-top:32px;">
+          <a href="https://www.instagram.com/" target="_blank" class="btn-outline" style="display:inline-block;color:var(--color-primary);border-color:var(--color-primary);">Follow on Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:var(--color-surface);opacity:0.5;z-index:0;"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="cta-banner">
+          <span class="label">The Experience Awaits</span>
+          <h2>Reserve a Table,<br>or Just Walk In</h2>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+            <a href="tel:09356013294" class="btn-primary" style="background:var(--color-secondary);color:white;font-size:16px;letter-spacing:0;padding:18px 48px;">&#9742; 093560 13294</a>
+            <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;">Daily: 11:30 AM &mdash; 01:00 AM &middot; Kitchen last order 12:30 AM</p>
+          </div>
+          <p class="cta-hint">For parties larger than 8, please call ahead.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">The Ocean Grill</a>
+        <p>Falcon Resort, Naika Wado, Calangute, Goa 403516</p>
+        <p style="margin-top:12px;"><a href="tel:09356013294" style="color:var(--color-primary);">093560 13294</a></p>
+        <p style="font-size:12px;color:var(--color-on-surface-muted);margin-top:4px;">Daily: 11:30 AM &mdash; 01:00 AM</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Reservations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Price Range</h4>
+          <p style="font-family:var(--font-display);font-size:20px;color:var(--color-primary);margin-bottom:8px;">&#8377;200 &mdash; &#8377;600</p>
+          <p style="font-size:13px;color:var(--color-on-surface-variant);">per person</p>
+          <p style="font-size:13px;color:var(--color-on-surface-variant);margin-top:12px;">A popular spot for both local Goans and travelers looking for an authentic grill experience.</p>
+          <h4 style="margin-top:20px;">Follow Us</h4>
+          <a href="https://www.instagram.com/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--color-on-surface-variant);margin-top:8px;transition:color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-on-surface-variant)'"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Ocean Grill &middot; Calangute</p>
+        <p>Dine-in &middot; Drive-through &middot; No-contact delivery</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919356013294" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/scripts.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 1.2 });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  </script>
+</body>
+</html>
